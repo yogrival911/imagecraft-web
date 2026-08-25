@@ -49,7 +49,7 @@
 
         const idToken = await result.user.getIdToken();
 
-        const res = await fetch("https://YOUR_API_DOMAIN/auth/account", {
+        const res = await fetch("https://appointyy.onrender.com/auth/account", {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${idToken}`,
