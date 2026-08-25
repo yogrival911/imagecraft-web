@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,17 +6,83 @@
   <title>Delete Your Account</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
+
 <body>
   <h1>Delete Your Account</h1>
+
   <p>
-    Enter the email associated with your account. We'll send you a link
-    to confirm deletion. This will permanently delete your profile,
-    uploaded photos, generated try-on images, and credit balance.
-    This cannot be undone.
+    You can request deletion of your account and associated data using this page.
   </p>
 
-  <input type="email" id="email" placeholder="you@example.com" required />
+  <h2>How to request account deletion</h2>
+
+  <ol>
+    <li>Enter the email address associated with your account below.</li>
+    <li>Click <strong>Send deletion link</strong>.</li>
+    <li>Check your email for the account deletion confirmation message.</li>
+    <li>Click the <strong>Delete My Account</strong> link in the confirmation email.</li>
+    <li>Your account and associated data will then be permanently deleted.</li>
+  </ol>
+
+  <p>
+    For security, your account will only be deleted after you confirm the
+    deletion request using the link sent to your email address.
+  </p>
+
+  <h2>Data that will be deleted</h2>
+
+  <p>
+    After you confirm the deletion request, the following account-associated
+    data will be deleted:
+  </p>
+
+  <ul>
+    <li>Account and profile information</li>
+    <li>Uploaded photos</li>
+    <li>Generated virtual try-on images</li>
+    <li>Credit balance and account-related credit data</li>
+    <li>Other personal data associated with your account</li>
+  </ul>
+
+  <h2>Data that may be retained</h2>
+
+  <p>
+    Certain information may be retained when required by law, for financial
+    or transaction records, fraud prevention, security, dispute resolution,
+    or other legitimate legal requirements.
+  </p>
+
+  <p>
+    Any information that must be retained will only be kept for the period
+    required for the applicable purpose and will be deleted when it is no
+    longer necessary.
+  </p>
+
+  <h2>Important</h2>
+
+  <p>
+    Account deletion is permanent and cannot be undone. Once your account
+    and associated data have been deleted, they cannot be recovered.
+  </p>
+
+  <hr />
+
+  <h2>Request Account Deletion</h2>
+
+  <p>
+    Enter the email associated with your account. We'll send you a link
+    to confirm deletion.
+  </p>
+
+  <input
+    type="email"
+    id="email"
+    placeholder="you@example.com"
+    required
+  />
+
   <button id="submitBtn">Send deletion link</button>
+
   <p id="status"></p>
 
   <script type="module">
@@ -51,6 +118,7 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email }),
         });
+
         const data = await res.json();
 
         // Store email locally so confirm-deletion.html can read it if
@@ -67,3 +135,4 @@
   </script>
 </body>
 </html>
+
