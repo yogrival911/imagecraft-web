@@ -46,7 +46,7 @@
         // Call your backend, which generates the link via Admin SDK
         // and emails it (keeps the actual email link generation server-side
         // so it's tied to a real user check).
-        const res = await fetch("https://YOUR_API_DOMAIN/auth/request-deletion", {
+        const res = await fetch("https://appointyy.onrender.com/auth/request-deletion", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email }),
