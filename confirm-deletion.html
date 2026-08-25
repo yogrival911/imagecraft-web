@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Confirm Account Deletion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div id="status">Verifying link...</div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import {
+      getAuth,
+      isSignInWithEmailLink,
+      signInWithEmailLink,
+    } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    // Same config as your app's Firebase project
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      projectId: "YOUR_PROJECT",
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const statusEl = document.getElementById("status");
+
+    async function run() {
+      if (!isSignInWithEmailLink(auth, window.location.href)) {
+        statusEl.textContent = "Invalid or expired link.";
+        return;
+      }
+
+      // Email isn't in the link itself for security — if they opened the
+      // link on the same device they requested it from, it's in
+      // localStorage already (Firebase SDK stores it). Otherwise ask.
+      let email = window.localStorage.getItem("emailForDeletion");
+      if (!email) {
+        email = window.prompt("Please confirm your email to continue:");
+      }
+
+      try {
+        const result = await signInWithEmailLink(auth, email, window.location.href);
+        window.localStorage.removeItem("emailForDeletion");
+
+        statusEl.textContent = "Deleting your account...";
+
+        const idToken = await result.user.getIdToken();
+
+        const res = await fetch("https://YOUR_API_DOMAIN/auth/account", {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${idToken}`,
+          },
+        });
+        const data = await res.json();
+
+        statusEl.textContent = data.success
+          ? "Your account and data have been deleted."
+          : `Something went wrong: ${data.error}`;
+      } catch (err) {
+        statusEl.textContent = `Error: ${err.message}`;
+      }
+    }
+
+    run();
+  </script>
+</body>
+</html>
