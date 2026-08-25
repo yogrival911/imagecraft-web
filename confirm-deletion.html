@@ -55,11 +55,22 @@
             Authorization: `Bearer ${idToken}`,
           },
         });
-        const data = await res.json();
-
-        statusEl.textContent = data.success
-          ? "Your account and data have been deleted."
-          : `Something went wrong: ${data.error}`;
+        // Debug: log the actual response
+          console.log("Response status:", res.status);
+          console.log("Response type:", res.headers.get("content-type"));
+          const responseText = await res.text();
+          console.log("Raw response:", responseText);
+          
+          // Now try parsing as JSON
+          try {
+            const data = JSON.parse(responseText);
+            statusEl.textContent = data.success
+              ? "Your account and data have been deleted."
+              : `Something went wrong: ${data.error}`;
+          } catch (parseErr) {
+            statusEl.textContent = `Error: Backend returned invalid response. Check browser console.`;
+            console.error("Parse error:", parseErr);
+          }
       } catch (err) {
         statusEl.textContent = `Error: ${err.message}`;
       }
