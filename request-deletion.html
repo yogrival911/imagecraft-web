@@ -99,7 +99,7 @@
       if (!email) return;
       statusEl.textContent = "Sending...";
       try {
-        const res = await fetch("https://appointyy.onrender.com/auth/request-deletion", {
+        const res = await fetch("https://imagecraftai.fly.dev/auth/request-deletion", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email }),
