@@ -2,14 +2,14 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Delete Your Account - WearOn AI</title>
+  <title>Delete Your Account - AI Hairstyle, Haircut & Colour</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
   <h1>Delete Your Account</h1>
   <p>
-    This page allows users of <strong>WearOn AI - Try On Clothes</strong>
-    (Android app, package name: <strong>com.yogesh.imagecraftai</strong>),
+    This page allows users of <strong>AI Hairstyle, Haircut & Colour</strong>
+    (Android app, package name: <strong>com.yogdroidtech.hairstylistai</strong>),
     developed by <strong>yogdroidtech</strong>, to request deletion of
     their account and associated data.
   </p>
@@ -36,7 +36,7 @@
   <ul>
     <li>Account and profile information</li>
     <li>Uploaded photos</li>
-    <li>Generated virtual try-on images</li>
+    <li>Generated hairstyle, haircut, and colour preview images</li>
     <li>Credit balance and account-related credit data</li>
     <li>Other personal data associated with your account</li>
   </ul>
@@ -59,8 +59,8 @@
   <hr />
   <h2>Request Account Deletion</h2>
   <p>
-    Enter the email associated with your <strong>WearOn AI</strong> account.
-    We'll send you a link to confirm deletion.
+    Enter the email associated with your <strong>AI Hairstyle, Haircut &
+    Colour</strong> account. We'll send you a link to confirm deletion.
   </p>
   <input
     type="email"
@@ -74,8 +74,8 @@
   <hr />
   <footer>
     <p>
-      <strong>WearOn AI - Try On Clothes</strong><br />
-      Package name: com.yogesh.imagecraftai<br />
+      <strong>AI Hairstyle, Haircut & Colour</strong><br />
+      Package name: com.yogdroidtech.hairstylistai<br />
       Developer: yogdroidtech
     </p>
   </footer>
@@ -86,10 +86,11 @@
       getAuth,
       sendSignInLinkToEmail,
     } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    // TODO: replace with this app's actual Firebase project config
     const firebaseConfig = {
-      apiKey: "AIzaSyAX4fQACNJc324HCialHjqkAxBR3yToUII",
-      authDomain: "futuraai-8676d.firebaseapp.com",
-      projectId: "futuraai-8676d",
+      apiKey: "AIzaSyACIlSuZd2ofnwzQhomHdBTkA5FI560eio",
+      authDomain: "hair-stylist-5051e.firebaseapp.com",
+      projectId: "hair-stylist-5051e",
     };
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
@@ -99,7 +100,7 @@
       if (!email) return;
       statusEl.textContent = "Sending...";
       try {
-        const res = await fetch("https://imagecraftai.fly.dev/auth/request-deletion", {
+        const res = await fetch("https://hairstylistai.fly.dev/auth/request-deletion", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email }),
