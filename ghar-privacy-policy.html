@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ghar Saaf Karo Privacy Policy</title>
+<meta name="description" content="Privacy policy for Ghar Saaf Karo, a tidy-up game by Yogdroid Tech.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Mukta:wght@400;500;700&display=swap">
+<style>
+  /* Layout: one readable column, a "what we collect" ledger up top, then the full policy. */
+  :root {
+    --bg: #FBF7F2;
+    --surface: #FFFFFF;
+    --ink: #2B1B33;
+    --ink-soft: #5F5068;
+    --line: #E9DFD6;
+    --accent: #D9601C;
+    --accent-soft: #FCE6D6;
+    --ok: #2E8B57;
+    --font-display: "Baloo 2", "Mukta", system-ui, sans-serif;
+    --font-body: "Mukta", "Noto Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1C1320; --surface: #261B2C; --ink: #F4ECF6; --ink-soft: #BFAFC6;
+      --line: #3A2D42; --accent: #F28A3A; --accent-soft: #3B2418; --ok: #5BC48A;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1C1320; --surface: #261B2C; --ink: #F4ECF6; --ink-soft: #BFAFC6;
+    --line: #3A2D42; --accent: #F28A3A; --accent-soft: #3B2418; --ok: #5BC48A;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .wrap {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 48px 64px;
+    display: grid;
+    gap: 40px;
+  }
+
+  header { display: grid; gap: 10px; }
+  .app {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-display); font-weight: 700; font-size: 15px;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent);
+  }
+  .app svg { flex: none; }
+  h1 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(2rem, 6vw, 2.75rem); line-height: 1.1; margin: 0;
+    text-wrap: balance;
+  }
+  .meta { color: var(--ink-soft); margin: 0; font-size: 15px; }
+
+  .ledger {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .ledger h2 {
+    margin: 0; padding: 14px 18px; font-size: 13px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-soft); border-bottom: 1px solid var(--line);
+    font-family: var(--font-body); font-weight: 700;
+  }
+  .ledger dl { margin: 0; display: grid; }
+  .ledger .row {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px;
+    padding: 12px 18px; border-bottom: 1px solid var(--line); align-items: baseline;
+  }
+  .ledger .row:last-child { border-bottom: 0; }
+  .ledger dt { min-width: 0; }
+  .ledger dd { margin: 0; font-weight: 700; text-align: right; }
+  .ledger dd.none { color: var(--ok); }
+
+  section { display: grid; gap: 10px; }
+  h2.sec {
+    font-family: var(--font-display); font-weight: 600; font-size: 1.45rem;
+    line-height: 1.25; margin: 0; text-wrap: balance;
+  }
+  p, ul { margin: 0; }
+  ul { padding-left: 1.25rem; display: grid; gap: 6px; }
+  li::marker { color: var(--accent); }
+  strong { font-weight: 700; }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.88em;
+    background: var(--accent-soft); padding: 1px 6px; border-radius: 5px;
+  }
+
+  .hindi {
+    background: var(--accent-soft); border-radius: 14px; padding: 18px 20px;
+    display: grid; gap: 8px;
+  }
+  .hindi h2 { font-family: var(--font-display); font-size: 1.2rem; margin: 0; }
+  .hindi p { font-size: 16px; }
+
+  .contact { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .email {
+    font-weight: 700; color: var(--accent); user-select: all; word-break: break-all;
+  }
+  button {
+    font: inherit; font-size: 14px; font-weight: 500; cursor: pointer;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    border-radius: 999px; padding: 4px 14px;
+  }
+  button:hover { border-color: var(--accent); }
+  button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  footer { color: var(--ink-soft); font-size: 14px; border-top: 1px solid var(--line); padding-top: 18px; }
+</style>
+
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <span class="app">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.2 12 4l9 7.2V20a1 1 0 0 1-1 1h-5.5v-5.5h-5V21H4a1 1 0 0 1-1-1z" fill="currentColor"/></svg>
+      Ghar Saaf Karo
+    </span>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective date: 19 October 2026 · Developer: Yogdroid Tech · App ID: <code>com.yogdroidtech.gharsaafkaro</code></p>
+  </header>
+
+  <div class="ledger" aria-labelledby="glance">
+    <h2 id="glance">At a glance</h2>
+    <dl>
+      <div class="row"><dt>Personal information collected</dt><dd class="none">None</dd></div>
+      <div class="row"><dt>Data shared with third parties</dt><dd class="none">None</dd></div>
+      <div class="row"><dt>Account or sign-in</dt><dd class="none">Not required</dd></div>
+      <div class="row"><dt>Ads or analytics</dt><dd class="none">None</dd></div>
+      <div class="row"><dt>In-app purchases</dt><dd class="none">None</dd></div>
+      <div class="row"><dt>Where your game progress is saved</dt><dd>Only on your phone</dd></div>
+    </dl>
+  </div>
+
+  <section>
+    <p>Ghar Saaf Karo is a casual game where you tidy up rooms by dragging household items to their right place. This policy explains what information the game uses and how it is handled. In short: the game does not collect, store on any server, or share any personal information about you.</p>
+  </section>
+
+  <section>
+    <h2 class="sec">Information we collect</h2>
+    <p>We do not collect any personal information. The game does not ask for your name, email address, phone number, location, contacts, photos or any other personal details, and it has no sign-up or login.</p>
+  </section>
+
+  <section>
+    <h2 class="sec">Information saved on your device</h2>
+    <p>To let you continue where you left off, the game saves a small amount of game data in your phone's local app storage:</p>
+    <ul>
+      <li>Levels completed, stars earned and in-game coins</li>
+      <li>The date of your last daily reward and your reward streak</li>
+      <li>Your settings: sound, music, vibration and the language you picked</li>
+    </ul>
+    <p>This data never leaves your device and is not sent to us or anyone else. It is deleted when you clear the app's data or uninstall the game.</p>
+  </section>
+
+  <section>
+    <h2 class="sec">Permissions</h2>
+    <ul>
+      <li><strong>Vibration</strong>: used for haptic feedback when you pick up and place items. You can turn it off in the game's settings.</li>
+      <li><strong>Internet</strong>: included by the app framework. The game does not use it to send your data anywhere and plays fully offline.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="sec">Third-party services</h2>
+    <p>The game does not include advertising, analytics, crash reporting or social media services, and it does not share data with any third party.</p>
+  </section>
+
+  <section>
+    <h2 class="sec">Coins and purchases</h2>
+    <p>Coins are earned only by playing and have no real-money value. The game has no in-app purchases and asks for no payment information.</p>
+  </section>
+
+  <section>
+    <h2 class="sec">Children's privacy</h2>
+    <p>Ghar Saaf Karo is suitable for players of all ages. Because the game collects no personal information from anyone, it does not knowingly collect personal information from children under 13. If you believe a child has somehow shared personal information with us, contact us and we will delete it.</p>
+  </section>
+
+  <section>
+    <h2 class="sec">Security</h2>
+    <p>Your game progress is stored only in the app's private storage on your device, which other apps cannot read. Since no data is sent over the internet, there is nothing for us to store or protect on a server.</p>
+  </section>
+
+  <section>
+    <h2 class="sec">Changes to this policy</h2>
+    <p>If the game changes in a way that affects your privacy, for example by adding new features that use data, we will update this page and change the effective date at the top before the change goes live.</p>
+  </section>
+
+  <section>
+    <h2 class="sec">Contact us</h2>
+    <p>Questions about this policy or the game? Write to us:</p>
+    <div class="contact">
+      <span class="email" id="email">imagecraftai99@gmail.com</span>
+      <button type="button" id="copy-email">Copy email</button>
+    </div>
+  </section>
+
+  <div class="hindi" lang="hi">
+    <h2>सरल शब्दों में</h2>
+    <p>घर साफ़ करो गेम आपकी कोई भी निजी जानकारी नहीं लेता। न नाम, न ईमेल, न लोकेशन। आपके लेवल, स्टार, सिक्के और सेटिंग्स सिर्फ़ आपके फ़ोन में सेव होते हैं और कहीं नहीं भेजे जाते। गेम में कोई विज्ञापन, ट्रैकिंग या पेमेंट नहीं है।</p>
+  </div>
+
+  <footer>© 2026 Yogdroid Tech. Ghar Saaf Karo is available on Google Play.</footer>
+</main>
+
+<script>
+  (function () {
+    var btn = document.getElementById('copy-email');
+    var email = document.getElementById('email');
+    if (!btn || !email) return;
+    btn.addEventListener('click', function () {
+      var text = email.textContent.trim();
+      var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy email'; }, 1600); };
+      var fallback = function () {
+        var r = document.createRange(); r.selectNodeContents(email);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = 'Selected, press copy';
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  })();
+</script>
+
+</body>
+</html>
